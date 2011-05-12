@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F4A9FD6137CA86000390C90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4A9FD5137CA86000390C90 /* UIKit.framework */; };
+		4F4A9FD8137CA86000390C90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4A9FD7137CA86000390C90 /* Foundation.framework */; };
+		4F4A9FDA137CA86000390C90 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F4A9FD9137CA86000390C90 /* CoreGraphics.framework */; };
+		4F4A9FE0137CA86000390C90 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FDE137CA86000390C90 /* InfoPlist.strings */; };
+		4F4A9FE3137CA86000390C90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FE2137CA86000390C90 /* main.m */; };
+		4F4A9FE6137CA86000390C90 /* navPopoverAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FE5137CA86000390C90 /* navPopoverAppDelegate.m */; };
+		4F4A9FE9137CA86000390C90 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FE7137CA86000390C90 /* MainWindow.xib */; };
+		4F4A9FEC137CA86000390C90 /* navPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FEB137CA86000390C90 /* navPopoverViewController.m */; };
+		4F4A9FEF137CA86000390C90 /* navPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FED137CA86000390C90 /* navPopoverViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F4A9FD1137CA85F00390C90 /* navPopover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navPopover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4A9FD5137CA86000390C90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F4A9FD7137CA86000390C90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F4A9FD9137CA86000390C90 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4F4A9FDD137CA86000390C90 /* navPopover-Info.plist */ = {isa = PBXFileReference; path = "navPopover-Info.plist"; sourceTree = "<group>"; };
+		4F4A9FDF137CA86000390C90 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F4A9FE1137CA86000390C90 /* navPopover-Prefix.pch */ = {isa = PBXFileReference; path = "navPopover-Prefix.pch"; sourceTree = "<group>"; };
+		4F4A9FE2137CA86000390C90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F4A9FE4137CA86000390C90 /* navPopoverAppDelegate.h */ = {isa = PBXFileReference; path = navPopoverAppDelegate.h; sourceTree = "<group>"; };
+		4F4A9FE5137CA86000390C90 /* navPopoverAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navPopoverAppDelegate.m; sourceTree = "<group>"; };
+		4F4A9FE8137CA86000390C90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4F4A9FEA137CA86000390C90 /* navPopoverViewController.h */ = {isa = PBXFileReference; path = navPopoverViewController.h; sourceTree = "<group>"; };
+		4F4A9FEB137CA86000390C90 /* navPopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navPopoverViewController.m; sourceTree = "<group>"; };
+		4F4A9FEE137CA86000390C90 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/navPopoverViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F4A9FCE137CA85F00390C90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4A9FD6137CA86000390C90 /* UIKit.framework in Frameworks */,
+				4F4A9FD8137CA86000390C90 /* Foundation.framework in Frameworks */,
+				4F4A9FDA137CA86000390C90 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F4A9FC6137CA85F00390C90 = {
+			isa = PBXGroup;
+			children = (
+				4F4A9FDB137CA86000390C90 /* navPopover */,
+				4F4A9FD4137CA86000390C90 /* Frameworks */,
+				4F4A9FD2137CA86000390C90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F4A9FD2137CA86000390C90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F4A9FD1137CA85F00390C90 /* navPopover.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F4A9FD4137CA86000390C90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F4A9FD5137CA86000390C90 /* UIKit.framework */,
+				4F4A9FD7137CA86000390C90 /* Foundation.framework */,
+				4F4A9FD9137CA86000390C90 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F4A9FDB137CA86000390C90 /* navPopover */ = {
+			isa = PBXGroup;
+			children = (
+				4F4A9FE4137CA86000390C90 /* navPopoverAppDelegate.h */,
+				4F4A9FE5137CA86000390C90 /* navPopoverAppDelegate.m */,
+				4F4A9FE7137CA86000390C90 /* MainWindow.xib */,
+				4F4A9FEA137CA86000390C90 /* navPopoverViewController.h */,
+				4F4A9FEB137CA86000390C90 /* navPopoverViewController.m */,
+				4F4A9FED137CA86000390C90 /* navPopoverViewController.xib */,
+				4F4A9FDC137CA86000390C90 /* Supporting Files */,
+			);
+			path = navPopover;
+			sourceTree = "<group>";
+		};
+		4F4A9FDC137CA86000390C90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F4A9FDD137CA86000390C90 /* navPopover-Info.plist */,
+				4F4A9FDE137CA86000390C90 /* InfoPlist.strings */,
+				4F4A9FE1137CA86000390C90 /* navPopover-Prefix.pch */,
+				4F4A9FE2137CA86000390C90 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F4A9FD0137CA85F00390C90 /* navPopover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F4A9FF2137CA86000390C90 /* Build configuration list for PBXNativeTarget "navPopover" */;
+			buildPhases = (
+				4F4A9FCD137CA85F00390C90 /* Sources */,
+				4F4A9FCE137CA85F00390C90 /* Frameworks */,
+				4F4A9FCF137CA85F00390C90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = navPopover;
+			productName = navPopover;
+			productReference = 4F4A9FD1137CA85F00390C90 /* navPopover.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F4A9FC8137CA85F00390C90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "ElectroBarn Inc.";
+			};
+			buildConfigurationList = 4F4A9FCB137CA85F00390C90 /* Build configuration list for PBXProject "navPopover" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F4A9FC6137CA85F00390C90;
+			productRefGroup = 4F4A9FD2137CA86000390C90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F4A9FD0137CA85F00390C90 /* navPopover */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F4A9FCF137CA85F00390C90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4A9FE0137CA86000390C90 /* InfoPlist.strings in Resources */,
+				4F4A9FE9137CA86000390C90 /* MainWindow.xib in Resources */,
+				4F4A9FEF137CA86000390C90 /* navPopoverViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F4A9FCD137CA85F00390C90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4A9FE3137CA86000390C90 /* main.m in Sources */,
+				4F4A9FE6137CA86000390C90 /* navPopoverAppDelegate.m in Sources */,
+				4F4A9FEC137CA86000390C90 /* navPopoverViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F4A9FDE137CA86000390C90 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4A9FDF137CA86000390C90 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F4A9FE7137CA86000390C90 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4A9FE8137CA86000390C90 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4F4A9FED137CA86000390C90 /* navPopoverViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F4A9FEE137CA86000390C90 /* en */,
+			);
+			name = navPopoverViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F4A9FF0137CA86000390C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4F4A9FF1137CA86000390C90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		4F4A9FF3137CA86000390C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "navPopover/navPopover-Prefix.pch";
+				INFOPLIST_FILE = "navPopover/navPopover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F4A9FF4137CA86000390C90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "navPopover/navPopover-Prefix.pch";
+				INFOPLIST_FILE = "navPopover/navPopover-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F4A9FCB137CA85F00390C90 /* Build configuration list for PBXProject "navPopover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4A9FF0137CA86000390C90 /* Debug */,
+				4F4A9FF1137CA86000390C90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F4A9FF2137CA86000390C90 /* Build configuration list for PBXNativeTarget "navPopover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F4A9FF3137CA86000390C90 /* Debug */,
+				4F4A9FF4137CA86000390C90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F4A9FC8137CA85F00390C90 /* Project object */;
+}
