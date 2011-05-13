@@ -7,10 +7,11 @@
 //
 
 #import "EBAlternateSecondViewController.h"
-
+#import "EBFirstViewController.h"
 
 @implementation EBAlternateSecondViewController
 @synthesize popoverContentSize;
+@synthesize pickerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +26,7 @@
 
 - (void)dealloc
 {
+    [pickerView release];
     [super dealloc];
 }
 
@@ -52,6 +54,7 @@
 
 - (void)viewDidUnload
 {
+    [self setPickerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -60,6 +63,22 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //    self.contentSizeForViewInPopover = self.view.frame.size; // setting contentSizeForViewInPopover here is ineffective because the value stored in this property is only used the first time the view is shown.
+    
+    // in order to avoid having ugly black showing lower than the bottom of this view's table during the navigation controller's push/pop animation, set this view's height to the maximum height of the previous view in the navigation controller's stack
+    // this would be performed if there was a priori knowledge that this is a short view
+    // whether this is reasonable to be implemented or not depends on the content of this view and how it looks during the animation.  In this case it is a picker with a black background
+    NSArray *viewControllers = self.navigationController.viewControllers;
+    if (viewControllers.count > 1 && [viewControllers objectAtIndex:viewControllers.count-1] == self) { // has a previous controller
+
+        CGRect maximumTableViewRect = self.pickerView.frame;
+        EBFirstViewController *previousViewController = [viewControllers objectAtIndex:viewControllers.count-2];
+        CGSize previousViewPopoverContentSize = previousViewController.popoverContentSize;
+        
+        if (maximumTableViewRect.size.height < previousViewPopoverContentSize.height) {
+            maximumTableViewRect.size.height = previousViewPopoverContentSize.height + 37.0f; // not sure if the 37 point correction factor is needed here
+        }
+        self.pickerView.frame = maximumTableViewRect;  
+    }
     
     NSLog(@"AlternateSecondView viewWillAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 }

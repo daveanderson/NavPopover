@@ -75,10 +75,11 @@
     
     // the 4.0f correction factor is needed to ensure the popover arrow doesn't move
     CGRect maximumRect = self.view.frame;
-    if (self.view.frame.size.height > secondViewController.view.frame.size.height * 2.0f - 4.0f) {
-        maximumRect.size.height = self.secondViewController.view.frame.size.height * 2.0f - 4.0f;
-    } else if (self.view.frame.size.height > alternateSecondViewController.view.frame.size.height * 2.0f - 4.0f) {
-        maximumRect.size.height = self.alternateSecondViewController.view.frame.size.height * 2.0f - 4.0f;
+    if (maximumRect.size.height > self.secondViewController.popoverContentSize.height * 2.0f - 4.0f) {
+        maximumRect.size.height = self.secondViewController.popoverContentSize.height * 2.0f - 4.0f;
+    }
+    if (maximumRect.size.height > self.alternateSecondViewController.popoverContentSize.height * 2.0f - 4.0f) {
+        maximumRect.size.height = self.alternateSecondViewController.popoverContentSize.height * 2.0f - 4.0f;
     }
     self.view.frame = maximumRect;
     self.contentSizeForViewInPopover = maximumRect.size; // sets initial size of popover
@@ -104,6 +105,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    self.contentSizeForViewInPopover = self.view.frame.size; // setting contentSizeForViewInPopover here is ineffective because the value stored in this property is only used the first time the view is shown.
+    
+    // in order to avoid having ugly black showing lower than the bottom of this view's table during the navigation controller's push/pop animation, set this view's table height to the maximum height of the next view in the navigation controller's stack
+    CGRect maximumTableViewRect = self.tableView.frame;
+    if (maximumTableViewRect.size.height < self.secondViewController.popoverContentSize.height) {
+        maximumTableViewRect.size.height = self.secondViewController.popoverContentSize.height + 37.0f;
+    }
+    if (maximumTableViewRect.size.height < self.alternateSecondViewController.popoverContentSize.height) {
+        maximumTableViewRect.size.height = self.alternateSecondViewController.popoverContentSize.height + 37.0f;
+    }
+    self.tableView.frame = maximumTableViewRect;
+
     
     NSLog(@"FirstView viewWillAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 }

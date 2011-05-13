@@ -11,7 +11,9 @@
 
 @interface EBAlternateSecondViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     CGSize popoverContentSize;
+    UIPickerView *pickerView;
 }
 @property (nonatomic, assign) CGSize popoverContentSize;
+@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 
 @end
