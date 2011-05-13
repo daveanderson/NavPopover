@@ -18,6 +18,8 @@
 		4F4A9FEF137CA86000390C90 /* navPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FED137CA86000390C90 /* navPopoverViewController.xib */; };
 		4F4A9FF8137CAA6100390C90 /* EBFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FF6137CAA6100390C90 /* EBFirstViewController.m */; };
 		4F4A9FF9137CAA6100390C90 /* EBFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FF7137CAA6100390C90 /* EBFirstViewController.xib */; };
+		4F4A9FFD137CF43400390C90 /* EBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */; };
+		4F4A9FFE137CF43400390C90 /* EBSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		4F4A9FF5137CAA6100390C90 /* EBFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBFirstViewController.h; sourceTree = "<group>"; };
 		4F4A9FF6137CAA6100390C90 /* EBFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBFirstViewController.m; sourceTree = "<group>"; };
 		4F4A9FF7137CAA6100390C90 /* EBFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBFirstViewController.xib; sourceTree = "<group>"; };
+		4F4A9FFA137CF43300390C90 /* EBSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBSecondViewController.h; sourceTree = "<group>"; };
+		4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBSecondViewController.m; sourceTree = "<group>"; };
+		4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBSecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,9 @@
 				4F4A9FE4137CA86000390C90 /* navPopoverAppDelegate.h */,
 				4F4A9FE5137CA86000390C90 /* navPopoverAppDelegate.m */,
 				4F4A9FE7137CA86000390C90 /* MainWindow.xib */,
+				4F4A9FFA137CF43300390C90 /* EBSecondViewController.h */,
+				4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */,
+				4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */,
 				4F4A9FF5137CAA6100390C90 /* EBFirstViewController.h */,
 				4F4A9FF6137CAA6100390C90 /* EBFirstViewController.m */,
 				4F4A9FF7137CAA6100390C90 /* EBFirstViewController.xib */,
@@ -163,6 +171,7 @@
 				4F4A9FE9137CA86000390C90 /* MainWindow.xib in Resources */,
 				4F4A9FEF137CA86000390C90 /* navPopoverViewController.xib in Resources */,
 				4F4A9FF9137CAA6100390C90 /* EBFirstViewController.xib in Resources */,
+				4F4A9FFE137CF43400390C90 /* EBSecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +186,7 @@
 				4F4A9FE6137CA86000390C90 /* navPopoverAppDelegate.m in Sources */,
 				4F4A9FEC137CA86000390C90 /* navPopoverViewController.m in Sources */,
 				4F4A9FF8137CAA6100390C90 /* EBFirstViewController.m in Sources */,
+				4F4A9FFD137CF43400390C90 /* EBSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

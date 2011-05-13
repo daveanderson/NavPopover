@@ -1,16 +1,15 @@
 //
-//  firstViewController.m
+//  EBSecondViewController.m
 //  navPopover
 //
 //  Created by David Anderson on 5/12/11.
 //  Copyright 2011 ElectroBarn Inc. All rights reserved.
 //
 
-#import "EBFirstViewController.h"
 #import "EBSecondViewController.h"
 
 
-@implementation EBFirstViewController
+@implementation EBSecondViewController
 @synthesize selectionList;
 
 - (id)initWithArray:(NSArray *)array {
@@ -23,7 +22,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; // looks for nib with name matching the name of this class
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -68,8 +67,8 @@
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"FirstViewCell";
-
+    static NSString *cellIdentifier = @"SecondViewCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
@@ -81,16 +80,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.selectionList count];
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EBSecondViewController *nextViewController = [[EBSecondViewController alloc] initWithArray:[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", nil]];
-    // Configure the new view controller.
-
-    [self.navigationController pushViewController:nextViewController animated:YES];
-    [nextViewController release];
 }
 
 @end

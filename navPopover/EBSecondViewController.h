@@ -1,5 +1,5 @@
 //
-//  firstViewController.h
+//  EBSecondViewController.h
 //  navPopover
 //
 //  Created by David Anderson on 5/12/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EBFirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface EBSecondViewController : UIViewController <UITableViewDataSource> {
     NSArray *selectionList;
 }
 @property (nonatomic, retain) NSArray *selectionList;
