@@ -8,10 +8,14 @@
 
 #import "navPopoverViewController.h"
 
+#import "EBFirstViewController.h"
+
 @implementation navPopoverViewController
+@synthesize showPopoverButton;
 
 - (void)dealloc
 {
+    [showPopoverButton release];
     [super dealloc];
 }
 
@@ -35,6 +39,7 @@
 
 - (void)viewDidUnload
 {
+    [self setShowPopoverButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -45,5 +50,29 @@
     // Return YES for supported orientations
     return YES;
 }
+
+- (IBAction)showNavPopover:(id)sender {
+    
+    // init first view controller
+    EBFirstViewController *firstViewController = [[EBFirstViewController alloc] init];
+    // stick it in a navigation controller
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:firstViewController] autorelease];
+    navigationController.delegate = self;
+    // show the navigation controller in a popover
+    UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    popoverController.delegate = self;
+    
+    [popoverController presentPopoverFromRect:self.showPopoverButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+// adjusts popover size during navigationController animation
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+}
+
 
 @end
