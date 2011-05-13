@@ -20,6 +20,8 @@
 		4F4A9FF9137CAA6100390C90 /* EBFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FF7137CAA6100390C90 /* EBFirstViewController.xib */; };
 		4F4A9FFD137CF43400390C90 /* EBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */; };
 		4F4A9FFE137CF43400390C90 /* EBSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */; };
+		4F4AA002137CF96400390C90 /* EBAlternateSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4AA000137CF96300390C90 /* EBAlternateSecondViewController.m */; };
+		4F4AA003137CF96400390C90 /* EBAlternateSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F4AA001137CF96300390C90 /* EBAlternateSecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		4F4A9FFA137CF43300390C90 /* EBSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBSecondViewController.h; sourceTree = "<group>"; };
 		4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBSecondViewController.m; sourceTree = "<group>"; };
 		4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBSecondViewController.xib; sourceTree = "<group>"; };
+		4F4A9FFF137CF96300390C90 /* EBAlternateSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBAlternateSecondViewController.h; sourceTree = "<group>"; };
+		4F4AA000137CF96300390C90 /* EBAlternateSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBAlternateSecondViewController.m; sourceTree = "<group>"; };
+		4F4AA001137CF96300390C90 /* EBAlternateSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBAlternateSecondViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,9 @@
 				4F4A9FFA137CF43300390C90 /* EBSecondViewController.h */,
 				4F4A9FFB137CF43300390C90 /* EBSecondViewController.m */,
 				4F4A9FFC137CF43300390C90 /* EBSecondViewController.xib */,
+				4F4A9FFF137CF96300390C90 /* EBAlternateSecondViewController.h */,
+				4F4AA000137CF96300390C90 /* EBAlternateSecondViewController.m */,
+				4F4AA001137CF96300390C90 /* EBAlternateSecondViewController.xib */,
 				4F4A9FF5137CAA6100390C90 /* EBFirstViewController.h */,
 				4F4A9FF6137CAA6100390C90 /* EBFirstViewController.m */,
 				4F4A9FF7137CAA6100390C90 /* EBFirstViewController.xib */,
@@ -172,6 +180,7 @@
 				4F4A9FEF137CA86000390C90 /* navPopoverViewController.xib in Resources */,
 				4F4A9FF9137CAA6100390C90 /* EBFirstViewController.xib in Resources */,
 				4F4A9FFE137CF43400390C90 /* EBSecondViewController.xib in Resources */,
+				4F4AA003137CF96400390C90 /* EBAlternateSecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +196,7 @@
 				4F4A9FEC137CA86000390C90 /* navPopoverViewController.m in Sources */,
 				4F4A9FF8137CAA6100390C90 /* EBFirstViewController.m in Sources */,
 				4F4A9FFD137CF43400390C90 /* EBSecondViewController.m in Sources */,
+				4F4AA002137CF96400390C90 /* EBAlternateSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

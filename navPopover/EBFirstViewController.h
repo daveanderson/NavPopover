@@ -11,8 +11,10 @@
 
 @interface EBFirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *selectionList;
+    UITableView *tableView;
 }
 @property (nonatomic, retain) NSArray *selectionList;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 - (id)initWithArray:(NSArray *)array;
 

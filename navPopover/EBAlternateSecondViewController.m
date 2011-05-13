@@ -1,24 +1,15 @@
 //
-//  EBSecondViewController.m
+//  EBAlternateSecondViewController.m
 //  navPopover
 //
 //  Created by David Anderson on 5/12/11.
 //  Copyright 2011 ElectroBarn Inc. All rights reserved.
 //
 
-#import "EBSecondViewController.h"
+#import "EBAlternateSecondViewController.h"
 
 
-@implementation EBSecondViewController
-@synthesize selectionList;
-
-- (id)initWithArray:(NSArray *)array {
-    self = [super init]; // calls [self initWithNibName:nil bundle:nil];
-    if (self) {
-        self.selectionList = array;
-    }
-    return self;
-}
+@implementation EBAlternateSecondViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,10 +39,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"Second View";
+    self.title = @"Alternate Second View";
     self.contentSizeForViewInPopover = self.view.frame.size; // sets initial size of popover, only applicable here (not later)
     
-    NSLog(@"SecondView viewDidLoad frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    NSLog(@"AlternateSecondView viewDidLoad frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 
 }
 
@@ -66,14 +57,13 @@
     [super viewWillAppear:animated];
     //    self.contentSizeForViewInPopover = self.view.frame.size; // setting contentSizeForViewInPopover here is ineffective because the value stored in this property is only used the first time the view is shown.
     
-    NSLog(@"SecondView viewWillAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    NSLog(@"AlternateSecondView viewWillAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 }
-
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"SecondView viewDidAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    NSLog(@"AlternateSecondView viewDidAppear frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     // if this view is smaller than the previous view in the navigation controller stack
     // the frame of this view gets changed to match that of the previous view.
     // if the frame of this view is larger than the previous view in the navigation controller stack
@@ -86,22 +76,20 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UIPickerViewDataSource
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"SecondViewCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
-    }
-    cell.textLabel.text = [self.selectionList objectAtIndex:indexPath.row];
-    
-    return cell;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.selectionList count];
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return NSIntegerMax;
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [NSString stringWithFormat:@"%d", row];
 }
 
 @end
