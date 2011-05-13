@@ -11,6 +11,8 @@
 
 @implementation EBSecondViewController
 @synthesize selectionList;
+@synthesize popoverContentSize;
+
 
 - (id)initWithArray:(NSArray *)array {
     self = [super init]; // calls [self initWithNibName:nil bundle:nil];
@@ -50,6 +52,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"Second View";
     self.contentSizeForViewInPopover = self.view.frame.size; // sets initial size of popover, only applicable here (not later)
+    self.popoverContentSize = self.view.frame.size; // used during navigationController:willShowViewController: to setPopoverContentSize:
     
     NSLog(@"SecondView viewDidLoad frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 

@@ -10,6 +10,7 @@
 
 
 @implementation EBAlternateSecondViewController
+@synthesize popoverContentSize;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"Alternate Second View";
     self.contentSizeForViewInPopover = self.view.frame.size; // sets initial size of popover, only applicable here (not later)
+    self.popoverContentSize = self.view.frame.size; // used during navigationController:willShowViewController: to setPopoverContentSize:
     
     NSLog(@"AlternateSecondView viewDidLoad frame: %0.1f, %0.1f, %0.1f, %0.1f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 

@@ -9,6 +9,8 @@
 #import "navPopoverViewController.h"
 
 #import "EBFirstViewController.h"
+#import "EBSecondViewController.h"
+#import "EBAlternateSecondViewController.h"
 
 @implementation navPopoverViewController
 @synthesize showPopoverButton;
@@ -93,6 +95,24 @@
         CGSize size = firstViewController.popoverContentSize;
         size.height += 37.0f; //correction factor for popoverContentSize
                 
+        [self.popoverController setPopoverContentSize:size animated:YES];
+    } else if ([viewController isMemberOfClass:[EBSecondViewController class]]) {
+        EBSecondViewController *secondViewController = (EBSecondViewController *)viewController;
+        
+        NSLog(@"navigationController:willShowViewController:%@ setPopoverContentSize: %0.1f, %0.1f (excluding correction)", [secondViewController class], secondViewController.popoverContentSize.width, secondViewController.popoverContentSize.height);
+        
+        CGSize size = secondViewController.popoverContentSize;
+        size.height += 37.0f; //correction factor for popoverContentSize
+        
+        [self.popoverController setPopoverContentSize:size animated:YES];
+    } else if ([viewController isMemberOfClass:[EBAlternateSecondViewController class]]) {
+        EBAlternateSecondViewController *alternateSecondViewController = (EBAlternateSecondViewController *)viewController;
+        
+        NSLog(@"navigationController:willShowViewController:%@ setPopoverContentSize: %0.1f, %0.1f (excluding correction)", [alternateSecondViewController class], alternateSecondViewController.popoverContentSize.width, alternateSecondViewController.popoverContentSize.height);
+        
+        CGSize size = alternateSecondViewController.popoverContentSize;
+        size.height += 37.0f; //correction factor for popoverContentSize
+        
         [self.popoverController setPopoverContentSize:size animated:YES];
     }
 
