@@ -15,6 +15,8 @@
 @synthesize selectionList;
 @synthesize tableView;
 @synthesize popoverContentSize;
+@synthesize secondViewController;
+@synthesize alternateSecondViewController;
 
 - (id)initWithArray:(NSArray *)array {
     self = [super init]; // calls [self initWithNibName:nil bundle:nil];
@@ -41,6 +43,9 @@
 - (void)dealloc
 {
     [tableView release];
+    [selectionList release];
+    [secondViewController release];
+    [alternateSecondViewController release];
     [super dealloc];
 }
 
@@ -59,9 +64,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"First View";
-    self.contentSizeForViewInPopover = self.view.frame.size; // sets initial size of popover
-    self.popoverContentSize = self.view.frame.size; // used during navigationController:willShowViewController: to setPopoverContentSize:
     
+    // if the view.frame.size is more than 2X as tall as a later view pushed to the 
+    // navigation controller, then when the popover resizes to the smaller view, the popover arrow will move
+    // up from being centered on the rect from which the popover is displayed (at least when the popover
+    // arrow direction is right or left
+    // so load up the next views and use their heights to determine our maximum height
+    secondViewController = [[EBSecondViewController alloc] initWithArray:[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", nil]];
+    alternateSecondViewController = [[EBAlternateSecondViewController alloc] init];
+    
+    // the 4.0f correction factor is needed to ensure the popover arrow doesn't move
+    CGRect maximumRect = self.view.frame;
+    if (self.view.frame.size.height > secondViewController.view.frame.size.height * 2.0f - 4.0f) {
+        maximumRect.size.height = self.secondViewController.view.frame.size.height * 2.0f - 4.0f;
+    } else if (self.view.frame.size.height > alternateSecondViewController.view.frame.size.height * 2.0f - 4.0f) {
+        maximumRect.size.height = self.alternateSecondViewController.view.frame.size.height * 2.0f - 4.0f;
+    }
+    self.view.frame = maximumRect;
+    self.contentSizeForViewInPopover = maximumRect.size; // sets initial size of popover
+    self.popoverContentSize = maximumRect.size; // used during navigationController:willShowViewController: to setPopoverContentSize:
+
     // using the tableView frame (or the view frame) size works well if the size of the tableView frame 
     // (or its parent view frame) is fixed in size.
     // as soon as the animation happens when pushed to the second view controller, the size 
@@ -128,18 +150,9 @@
     // is adjusted to the size of the first view
     
     if (indexPath.row % 2 == 0) {
-        EBSecondViewController *nextViewController = [[EBSecondViewController alloc] initWithArray:[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", nil]];
-        // Configure the new view controller.
-        
-        [self.navigationController pushViewController:nextViewController animated:YES];
-        [nextViewController release];
+        [self.navigationController pushViewController:secondViewController animated:YES];
     } else {
-        EBAlternateSecondViewController *nextViewController = [[EBAlternateSecondViewController alloc] init];
-        // Configure the new view controller.
-        
-        [self.navigationController pushViewController:nextViewController animated:YES];
-        [nextViewController release];
-
+        [self.navigationController pushViewController:alternateSecondViewController animated:YES];
     }
     
 }
