@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EBFirstViewController : UIViewController {
-    
+@interface EBFirstViewController : UIViewController <UITableViewDataSource>{
+    NSArray *selectionList;
 }
+@property (nonatomic, retain) NSArray *selectionList;
+
+
+- (id)initWithArray:(NSArray *)array;
 
 @end

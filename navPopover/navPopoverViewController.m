@@ -54,7 +54,8 @@
 - (IBAction)showNavPopover:(id)sender {
     
     // init first view controller
-    EBFirstViewController *firstViewController = [[EBFirstViewController alloc] init];
+    EBFirstViewController *firstViewController = [[EBFirstViewController alloc] initWithArray:[NSArray arrayWithObjects:@"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine", @"Ten", nil]];
+    
     // stick it in a navigation controller
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:firstViewController] autorelease];
     navigationController.delegate = self;
