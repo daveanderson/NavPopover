@@ -18,6 +18,8 @@
     self = [super init]; // calls [self initWithNibName:nil bundle:nil];
     if (self) {
         self.selectionList = array;
+        self.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin; // needed so view doesn't move around during navigationController push/pop animation
+
     }
     return self;
 }

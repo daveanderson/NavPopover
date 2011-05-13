@@ -20,6 +20,9 @@
     self = [super init]; // calls [self initWithNibName:nil bundle:nil];
     if (self) {
         self.selectionList = array;
+        self.view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin; // needed so view doesn't move around during navigationController push/pop animation
+        // if pin to bottom (flexible top) then when the popover resizes taller, there is a black gap at the top.
+
     }
     return self;
 }
