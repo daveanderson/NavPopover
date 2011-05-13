@@ -14,6 +14,7 @@
 @implementation EBFirstViewController
 @synthesize selectionList;
 @synthesize tableView;
+@synthesize popoverContentSize;
 
 - (id)initWithArray:(NSArray *)array {
     self = [super init]; // calls [self initWithNibName:nil bundle:nil];
@@ -28,6 +29,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; // looks for nib with name matching the name of this class
     if (self) {
         // Custom initialization
+//        self.view.autoresizesSubviews = NO;
+
     }
     return self;
 }
@@ -54,6 +57,8 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"First View";
     self.contentSizeForViewInPopover = self.view.frame.size; // sets initial size of popover
+    self.popoverContentSize = self.view.frame.size; // used during navigationController:willShowViewController: to setPopoverContentSize:
+    
     // using the tableView frame (or the view frame) size works well if the size of the tableView frame 
     // (or its parent view frame) is fixed in size.
     // as soon as the animation happens when pushed to the second view controller, the size 

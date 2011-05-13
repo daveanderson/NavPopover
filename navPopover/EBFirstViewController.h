@@ -12,9 +12,11 @@
 @interface EBFirstViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *selectionList;
     UITableView *tableView;
+    CGSize popoverContentSize;
 }
 @property (nonatomic, retain) NSArray *selectionList;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, assign) CGSize popoverContentSize;
 
 - (id)initWithArray:(NSArray *)array;
 

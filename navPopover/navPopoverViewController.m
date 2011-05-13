@@ -12,6 +12,7 @@
 
 @implementation navPopoverViewController
 @synthesize showPopoverButton;
+@synthesize popoverController;
 
 - (void)dealloc
 {
@@ -59,12 +60,14 @@
     // stick it in a navigation controller
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:firstViewController] autorelease];
     navigationController.delegate = self;
+    
     // show the navigation controller in a popover
-    UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
     popoverController.delegate = self;
     
     [popoverController presentPopoverFromRect:self.showPopoverButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
+    [popoverController release];
 
 }
 
@@ -73,7 +76,34 @@
 // adjusts popover size during navigationController animation
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
+    NSLog(@"navigationController:willShowViewController:%@ view frame: %0.1f, %0.1f, %0.1f, %0.1f", [viewController class], viewController.view.frame.origin.x, viewController.view.frame.origin.y, viewController.view.frame.size.width, viewController.view.frame.size.height);
+    // for some reason the viewController.view.frame is the same as window.frame (768 x 1024) though if we set the popover content size including correction it appears to go back to normal
+    
+    if ([viewController isMemberOfClass:[EBFirstViewController class]]) {
+        EBFirstViewController *firstViewController = (EBFirstViewController *)viewController;
+        NSLog(@"navigationController:willShowViewController:%@ tableView frame: %0.1f, %0.1f, %0.1f, %0.1f", [firstViewController class], firstViewController.tableView.frame.origin.x, firstViewController.tableView.frame.origin.y, firstViewController.tableView.frame.size.width, firstViewController.tableView.frame.size.height);
+        
+        NSLog(@"navigationController:willShowViewController:%@ setPopoverContentSize: %0.1f, %0.1f (excluding correction)", [firstViewController class], firstViewController.popoverContentSize.width, firstViewController.popoverContentSize.height);
+
+        // due to something unexplainable, the popoverContentSize
+        // must be set to 37 points taller than the actual content
+        // is this to account for the header of the popover because its
+        // in a navigation controller?
+        // navigationController.navigationBar.frame.size is 44 points, not 37
+        CGSize size = firstViewController.popoverContentSize;
+        size.height += 37.0f; //correction factor for popoverContentSize
+                
+        [self.popoverController setPopoverContentSize:size animated:YES];
+    }
+
+    CGSize popoverSize = self.popoverController.popoverContentSize;
+    NSLog(@"navigationController:willShowViewController:%@ popoverContentSize: %0.1f, %0.1f (including correction)", [viewController class], popoverSize.width, popoverSize.height);
+
 }
 
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    NSLog(@"navigationController:didShowViewController:%@ view frame: %0.1f, %0.1f, %0.1f, %0.1f", [viewController class], viewController.view.frame.origin.x, viewController.view.frame.origin.y, viewController.view.frame.size.width, viewController.view.frame.size.height);
 
+}
 @end
