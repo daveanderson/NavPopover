@@ -62,14 +62,17 @@
     // stick it in a navigation controller
     UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:firstViewController] autorelease];
     navigationController.delegate = self;
+    [firstViewController release];
     
     // show the navigation controller in a popover
-    self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
+    self.popoverController = popover;
     popoverController.delegate = self;
     
     [popoverController presentPopoverFromRect:self.showPopoverButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
-    [popoverController release];
+    [popover release];
+    [navigationController release];
 
 }
 
