@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface navPopoverViewController : UIViewController <UINavigationControllerDelegate> {
+@interface navPopoverViewController : UIViewController <UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     
     UIButton *showPopoverButton;
     UIPopoverController *popoverController;

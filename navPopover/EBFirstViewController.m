@@ -70,7 +70,7 @@
     // up from being centered on the rect from which the popover is displayed (at least when the popover
     // arrow direction is right or left
     // so load up the next views and use their heights to determine our maximum height
-    secondViewController = [[EBSecondViewController alloc] initWithArray:[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", nil]];
+    secondViewController = [[EBSecondViewController alloc] initWithArray:[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", nil]];
     alternateSecondViewController = [[EBAlternateSecondViewController alloc] init];
     
     // the 4.0f correction factor is needed to ensure the popover arrow doesn't move

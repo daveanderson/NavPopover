@@ -35,6 +35,7 @@
 
 - (void)dealloc
 {
+    [selectionList release];
     [super dealloc];
 }
 
