@@ -40,14 +40,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [tableView release];
-    [selectionList release];
-    [secondViewController release];
-    [alternateSecondViewController release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -140,7 +132,7 @@
 
     UITableViewCell *cell = [targetTableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.textLabel.text = [self.selectionList objectAtIndex:indexPath.row];
     

@@ -19,11 +19,11 @@
     EBSecondViewController *secondViewController;
     EBAlternateSecondViewController *alternateSecondViewController;
 }
-@property (nonatomic, retain) NSArray *selectionList;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic) NSArray *selectionList;
+@property (nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, assign) CGSize popoverContentSize;
-@property (nonatomic, retain) EBSecondViewController *secondViewController;
-@property (nonatomic, retain) EBAlternateSecondViewController *alternateSecondViewController;
+@property (nonatomic) EBSecondViewController *secondViewController;
+@property (nonatomic) EBAlternateSecondViewController *alternateSecondViewController;
 
 - (id)initWithArray:(NSArray *)array;
 

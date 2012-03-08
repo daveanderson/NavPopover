@@ -13,8 +13,8 @@
     UIButton *showPopoverButton;
     UIPopoverController *popoverController;
 }
-@property (nonatomic, retain) IBOutlet UIButton *showPopoverButton;
-@property (nonatomic, retain) IBOutlet UIPopoverController *popoverController;
+@property (nonatomic) IBOutlet UIButton *showPopoverButton;
+@property (nonatomic) IBOutlet UIPopoverController *popoverController;
 
 - (IBAction)showNavPopover:(id)sender;
 

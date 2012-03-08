@@ -24,11 +24,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [pickerView release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -106,7 +101,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return NSIntegerMax;
+    return 100;
 }
 
 #pragma mark - UIPickerViewDelegate

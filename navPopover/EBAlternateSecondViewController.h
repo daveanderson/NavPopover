@@ -14,6 +14,6 @@
     UIPickerView *pickerView;
 }
 @property (nonatomic, assign) CGSize popoverContentSize;
-@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
+@property (nonatomic) IBOutlet UIPickerView *pickerView;
 
 @end

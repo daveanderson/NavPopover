@@ -16,11 +16,6 @@
 @synthesize showPopoverButton;
 @synthesize popoverController;
 
-- (void)dealloc
-{
-    [showPopoverButton release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -60,9 +55,8 @@
     EBFirstViewController *firstViewController = [[EBFirstViewController alloc] initWithArray:[NSArray arrayWithObjects:@"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine", @"Ten", @"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine", @"Ten", nil]];
     
     // stick it in a navigation controller
-    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:firstViewController] autorelease];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:firstViewController];
     navigationController.delegate = self;
-    [firstViewController release];
     
     // show the navigation controller in a popover
     UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
@@ -71,8 +65,6 @@
     
     [popoverController presentPopoverFromRect:self.showPopoverButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 
-    [popover release];
-    [navigationController release];
 
 }
 
