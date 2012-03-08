@@ -2,7 +2,7 @@
 
 GarageBand for iOS makes stellar use of UIPopoverControllers.  Apple sets the bar high by dynamically resizing the UIPopoverControllers as you select items in a list and the navigation controller (within the UIPopoverController) pushes and pops additional view controllers.
 
-NavPopover is a sample of techniques, methods and delegate implementations that allow you to make UIPopoverControllers as slick as GarageBand.  Its not a full recreation of everything needed for *perfect* popovers, but enough of a breadcrumb to get there.
+NavPopover is a sample of techniques, methods and delegate implementations that allow you to make UIPopoverControllers as slick as GarageBand.  Its not a full re-creation of everything needed for *perfect* popovers, but enough of a breadcrumb to get there if you wish.
 
 ## Key Techniques
 The fundamental methods and techniques used to make dynamically resizable popovers.
@@ -11,7 +11,7 @@ The fundamental methods and techniques used to make dynamically resizable popove
 
 * `- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated`
   
-  Allows you to set the popoverContentSize to the size the popover should become
+  Allows you to use `- (void)setPopoverContentSize:(CGSize)size animated:(BOOL)animated` to set the size the popover should become.
 
 * `- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated`
   
